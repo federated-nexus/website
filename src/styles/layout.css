@@ -10,9 +10,17 @@ mdui-top-app-bar {
     padding-left: 1em;
     gap: 0.2em;
 
+    & mdui-top-app-bar-title {
+        font-weight: bold;
+    }
+
     & mdui-icon {
         font-size: 32px;
     }
+}
+
+spacer {
+    flex-grow: 1;
 }
 
 :not(:defined) {

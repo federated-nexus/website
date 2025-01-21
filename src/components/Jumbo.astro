@@ -1,0 +1,16 @@
+---
+import styles from "../styles/jumbo.module.css"
+import Divider from "./Divider.astro"
+import logoLong from "../images/logoLong.svg"
+import { Image } from "astro:assets"
+---
+
+<header>
+    <section id={styles.jumbo}>
+        <Image id={styles.logoLong} src={logoLong} alt="Henry Hiles" />
+        <Divider />
+        <span id={styles.shortAbout}>
+            Full Stack Web Developer and Discord Bot Developer
+        </span>
+    </section>
+</header>

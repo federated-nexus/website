@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dividerIcon {
+    margin: 10px 0 15px;
+    position: relative;
+
+    & mdui-icon {
+        font-size: 48px;
+    }
+}
+
+.dividerIcon::before,
+.dividerIcon::after {
+    border-bottom: 0.5rem solid;
+    border-radius: 5em;
+    content: "";
+    margin: 0 1em;
+    position: absolute;
+    top: 50%;
+    width: 6rem;
+}
+
+.dividerIcon::before {
+    right: 100%;
+}
+
+.dividerIcon::after {
+    left: 100%;
+}

@@ -1,0 +1,14 @@
+#jumbo {
+    font-size: 2em;
+    text-align: center;
+
+    & #logoLong {
+        width: 35rem;
+        height: min-content;
+    }
+
+    & #shortAbout {
+        display: block;
+        padding: 2rem 1rem;
+    }
+}
