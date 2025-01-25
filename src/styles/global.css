@@ -1,0 +1,79 @@
+:root {
+    --primary: 78, 148, 228;
+    background-image: url(background.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+[variant="outlined"] {
+    border: 3px solid rgb(var(--primary));
+}
+
+body {
+    --circle-color: rgba(var(--primary), 0.8);
+    --bg-color: rgb(var(--mdui-color-background));
+
+    background-repeat: no-repeat;
+    margin: 0;
+
+    background: radial-gradient(
+            circle 1200px at -25vw -20vh,
+            var(--circle-color),
+            transparent
+        ),
+        radial-gradient(
+            circle 1000px at 130vw 130vh,
+            var(--circle-color),
+            transparent
+        );
+}
+
+mdui-navigation-bar {
+    background: transparent;
+    :root:not([data-scroll="0"]) & {
+        backdrop-filter: blur(5px);
+    }
+}
+
+main {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+mdui-divider {
+    width: 100%;
+}
+
+mdui-icon {
+    display: flex;
+}
+
+spacer {
+    flex-grow: 1;
+}
+
+img,
+mdui-icon {
+    width: 100%;
+    height: auto;
+}
+
+:not(:defined) {
+    visibility: hidden;
+}
+
+#dark {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    & #light {
+        display: none;
+    }
+
+    & #dark {
+        display: block;
+    }
+}

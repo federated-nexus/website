@@ -1,11 +1,12 @@
 ---
 import "mdui/mdui.css"
-import "../styles/layout.css"
-import logo from "../images/logo.svg"
+import TopBar from "../components/TopBar.astro"
+import BottomBar from "../components/BottomBar.astro"
+import "../styles/global.css"
 ---
 
 <!doctype html>
-<html lang="en" class="mdui-theme-auto">
+<html lang="en" class="mdui-theme-auto" data-scroll="0">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -18,27 +19,18 @@ import logo from "../images/logo.svg"
         <title>Henry Hiles - Home</title>
     </head>
     <body>
-        <mdui-top-app-bar scroll-behavior="elevate">
-            <mdui-icon src={logo.src}></mdui-icon>
-            <mdui-top-app-bar-title>Henry Hiles</mdui-top-app-bar-title>
-            <spacer></spacer>
-            <mdui-button-icon icon="more_vert"></mdui-button-icon>
-        </mdui-top-app-bar>
-        <slot />
-        <mdui-navigation-bar value="home">
-            <mdui-navigation-bar-item icon="home" value="home">
-                Home
-            </mdui-navigation-bar-item>
-            <mdui-navigation-bar-item icon="commute" value="item-2">
-                Item 2
-            </mdui-navigation-bar-item>
-            <mdui-navigation-bar-item icon="person" value="item-3">
-                Contact
-            </mdui-navigation-bar-item>
-        </mdui-navigation-bar>
+        <TopBar />
+        <main><slot /></main>
+        <BottomBar />
     </body>
 </html>
 
 <script>
-    import "mdui"
+    import { setColorScheme } from "mdui"
+    setColorScheme("#4e94e4")
+
+    const setScroll = () =>
+        (document.documentElement.dataset.scroll = window.scrollY.toString())
+    document.addEventListener("scroll", setScroll)
+    document.addEventListener("DOMContentLoaded", setScroll)
 </script>

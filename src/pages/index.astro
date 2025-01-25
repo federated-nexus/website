@@ -1,6 +1,106 @@
 ---
-import Jumbo from "../components/Jumbo.astro"
+import "../styles/index.css"
+import { Image } from "astro:assets"
 import Layout from "../layouts/Layout.astro"
+import logoLong from "../images/logoLong.svg"
+import logo from "../images/logo.svg"
+
+import ai900 from "../images/certificates/ai900.png"
+import az900 from "../images/certificates/az900.png"
+import dp900 from "../images/certificates/dp900.png"
+import googleCS from "../images/certificates/googleCS.png"
+import metaFrontEnd from "../images/certificates/metaFrontEnd.png"
 ---
 
-<Layout><Jumbo /></Layout>
+<Layout>
+    <header>
+        <section id="home">
+            <Image src={logoLong} alt="Henry Hiles" />
+            <span>Full Stack Web Developer and Discord Bot Developer</span>
+        </section>
+    </header>
+    <mdui-card variant="outlined">
+        <section id="about">
+            <h2>About Me</h2>
+            <mdui-divider></mdui-divider>
+            <article>
+                <p>
+                    Hello, my name is Henry Hiles, Full Stack Developer. I have
+                    extensive experience with React, SolidJS, Node.js, and
+                    ASP.NET Razor Pages. I have used my Node.js knowledge to
+                    create{" "}
+                    <a href="/projects/quadraticbot2.0">QuadraticBot 2.0</a>, a
+                    giveaway bot for discord. For more projects, check out{" "}
+                    <a
+                        href="https://github.com/Henry-Hiles"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        my GitHub profile.
+                    </a>
+                </p>
+            </article>
+
+            <a
+                href="https://github.com/Henry-Hiles"
+                target="_blank"
+                rel="noreferrer"
+                id="stats"
+            >
+                <div>
+                    <img
+                        src={`https://raw.githubusercontent.com/Henry-Hiles/github-stats/master/generated/overview.svg#gh-dark-mode-only`}
+                        alt="My Github Stats"
+                    />
+                    <img
+                        src={`https://raw.githubusercontent.com/Henry-Hiles/github-stats/master/generated/languages.svg${
+                            false ? "#gh-light-mode-only" : "#gh-dark-mode-only"
+                        }`}
+                        alt="My Github Stats"
+                    />
+                </div>
+            </a>
+
+            <!-- <div id="certificates">
+            <a
+                href="https://www.credly.com/badges/f85e1445-5fad-4954-90ce-78632749e1a7/public_url"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <Image src={googleCS} alt="Google Cybersecurity Badge" />
+            </a>
+            <a
+                href="https://www.credly.com/badges/bd5a8213-4e3d-4b93-9b7d-4cbce07ef960/public_url"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <Image src={az900} alt="Azure Fundamentals Badge" />
+            </a>
+            <a
+                href="https://www.credly.com/badges/1fd0fc1c-052a-4311-9938-6d38057305ce/public_url"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <Image src={dp900} alt="Azure Data Fundamentals Badge" />
+            </a>
+            <a
+                href="https://www.credly.com/badges/37008ee1-69e0-44aa-82cb-33e4bdf153a8/public_url"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <Image src={ai900} alt="Azure AI Fundamentals Badge" />
+            </a>
+            <a
+                href="https://www.credly.com/badges/acbec46c-7304-4bb5-8784-53fdcdc5544d/public_url"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <Image
+                    src={metaFrontEnd}
+                    alt="Meta Front-End Developer Badge"
+                />
+            </a>
+        </div> -->
+        </section>
+    </mdui-card>
+</Layout>
