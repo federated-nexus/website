@@ -17,8 +17,12 @@ header {
     }
 }
 
-section {
+mdui-card {
     max-width: 1000px;
+    width: 100%;
+}
+
+section {
     display: flex;
     flex-direction: column;
 
@@ -26,7 +30,6 @@ section {
         display: flex;
         justify-content: center;
         gap: 1em;
-        flex-wrap: wrap;
     }
 
     gap: 0.5em;
@@ -40,18 +43,25 @@ section {
         font-size: 1.3em;
     }
 
-    &#about {
-        & #stats img {
-            width: 45%;
-            min-width: 300px;
+    &#certificates {
+        & div {
+            padding-top: 1em;
+            width: 100%;
+            overflow: scroll;
+            justify-content: start;
         }
 
-        & #certificates {
-            padding-top: 1em;
-            & a {
-                min-width: 150px;
-                width: 15%;
-            }
+        & a {
+            min-width: 200px;
+            width: 15%;
+        }
+    }
+
+    &#about #stats {
+        flex-wrap: wrap;
+        & img {
+            width: 45%;
+            min-width: 300px;
         }
     }
 }
