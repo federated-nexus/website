@@ -4,10 +4,13 @@
 
 :root {
     --primary: 78, 148, 228;
-    scroll-behavior: smooth;
     background-image: url(background.svg);
     background-size: cover;
     background-position: center;
+
+    @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+    }
 }
 
 [variant="outlined"] {
