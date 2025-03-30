@@ -43,24 +43,19 @@ section {
         font-size: 1.3em;
     }
 
-    &#certificates {
-        & div {
-            padding-top: 1em;
-            width: 100%;
-            overflow: scroll;
-            justify-content: start;
-        }
+    &#certificates div {
+        flex-wrap: wrap;
 
         & a {
             min-width: 200px;
-            width: 15%;
+            width: 25%;
         }
     }
 
-    &#about #stats {
+    &#about #stats div {
         flex-wrap: wrap;
         & img {
-            width: 45%;
+            max-width: 350px;
             min-width: 300px;
         }
     }

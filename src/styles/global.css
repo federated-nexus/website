@@ -23,12 +23,12 @@ body {
     margin: 0;
 
     background: radial-gradient(
-            circle 1200px at -25vw -20vh,
+            circle 75vw at -25vw -20vh,
             var(--circle-color),
             transparent
         ),
         radial-gradient(
-            circle 1000px at 130vw 130vh,
+            circle 80vw at 150vw 130vh,
             var(--circle-color),
             transparent
         );
