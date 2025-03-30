@@ -21,3 +21,14 @@ const sections: Array<Page> = [
         ))
     }
 </mdui-navigation-bar>
+
+<script is:inline define:vars={{ sections }}>
+    document.addEventListener("scroll", () =>
+        sections.forEach(
+            ({ id }) =>
+                document.getElementById(id).getBoundingClientRect().bottom <
+                    window.innerHeight &&
+                (document.querySelector("mdui-navigation-bar").value = id)
+        )
+    )
+</script>

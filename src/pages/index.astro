@@ -3,12 +3,13 @@ import "../styles/index.css"
 import { Image } from "astro:assets"
 import Layout from "../layouts/Layout.astro"
 import logoLong from "../images/logoLong.svg"
-
+import { Icon } from "astro-icon/components"
 import ai900 from "../images/certificates/ai900.png"
 import az900 from "../images/certificates/az900.png"
 import dp900 from "../images/certificates/dp900.png"
 import googleCS from "../images/certificates/googleCS.png"
 import metaFrontEnd from "../images/certificates/metaFrontEnd.png"
+import ButtonLink from "../components/ButtonLink.astro"
 ---
 
 <Layout>
@@ -57,6 +58,62 @@ import metaFrontEnd from "../images/certificates/metaFrontEnd.png"
                     />
                 </div>
             </a>
+        </section>
+    </mdui-card>
+    <mdui-card variant="outlined">
+        <section id="projects">
+            <h2>My Projects</h2>
+            <mdui-divider></mdui-divider>
+
+            <article>
+                <p>
+                    I have obtained certifications from renowned organizations
+                    such as Google, Meta, and Microsoft, spanning various
+                    fields, including cybersecurity, artificial intelligence,
+                    Microsoft Azure cloud services, and front-end development:
+                </p>
+            </article>
+
+            <div>
+                <a
+                    href="https://www.credly.com/badges/bd5a8213-4e3d-4b93-9b7d-4cbce07ef960/public_url"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Image src={az900} alt="Azure Fundamentals Badge" />
+                </a>
+                <a
+                    href="https://www.credly.com/badges/1fd0fc1c-052a-4311-9938-6d38057305ce/public_url"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Image src={dp900} alt="Azure Data Fundamentals Badge" />
+                </a>
+                <a
+                    href="https://www.credly.com/badges/37008ee1-69e0-44aa-82cb-33e4bdf153a8/public_url"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Image src={ai900} alt="Azure AI Fundamentals Badge" />
+                </a>
+                <a
+                    href="https://www.credly.com/badges/acbec46c-7304-4bb5-8784-53fdcdc5544d/public_url"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Image
+                        src={metaFrontEnd}
+                        alt="Meta Front-End Developer Badge"
+                    />
+                </a>
+                <a
+                    href="https://www.credly.com/badges/f85e1445-5fad-4954-90ce-78632749e1a7/public_url"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Image src={googleCS} alt="Google Cybersecurity Badge" />
+                </a>
+            </div>
         </section>
     </mdui-card>
     <mdui-card variant="outlined">
@@ -113,6 +170,31 @@ import metaFrontEnd from "../images/certificates/metaFrontEnd.png"
                     <Image src={googleCS} alt="Google Cybersecurity Badge" />
                 </a>
             </div>
+        </section>
+    </mdui-card>
+    <mdui-card variant="outlined">
+        <section id="hire">
+            <h2>Hire Me</h2>
+            <mdui-divider></mdui-divider>
+
+            <article>
+                <p>
+                    I am available for hire to design and develop
+                    high-performance static websites and versatile multiplatform
+                    applications. With a focus on clean, efficient code and
+                    intuitive user experiences, I create solutions that are not
+                    only visually appealing but also optimized for speed,
+                    accessibility, and seamless functionality across all
+                    devices.
+                </p>
+            </article>
+
+            <ButtonLink
+                href={"mail" + "to:" + "henry@henr" + "yhiles." + "com"}
+            >
+                <Icon name="akar-icons:paper-airplane" size="1em" />
+                Contact me to receive a quote
+            </ButtonLink>
         </section>
     </mdui-card>
 </Layout>
