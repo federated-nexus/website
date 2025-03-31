@@ -48,6 +48,10 @@ main > * > section {
         padding: 1em;
         flex-wrap: wrap;
 
+        @media (max-width: 500px) {
+            border: none;
+        }
+
         & a {
             min-width: 150px;
             width: 15%;
@@ -84,6 +88,10 @@ main > * > section {
                     & img {
                         border-radius: var(--mdui-shape-corner-medium);
                         border: 2px solid rgb(var(--primary));
+
+                        .double > & {
+                            width: 45%;
+                        }
                     }
                 }
                 :nth-child(2) > & {

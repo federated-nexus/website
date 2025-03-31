@@ -3,7 +3,7 @@ button,
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.3em;
+    gap: 0.6em;
     border: 2px solid rgb(var(--primary));
     color: white;
     border-radius: 50px;
