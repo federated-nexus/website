@@ -22,11 +22,12 @@ mdui-card {
     width: 100%;
 }
 
-section {
+main > * > section {
     display: flex;
     flex-direction: column;
 
-    & div {
+    & div,
+    mdui-card {
         display: flex;
         justify-content: center;
         gap: 1em;
@@ -43,12 +44,60 @@ section {
         font-size: 1.3em;
     }
 
-    &#certificates div {
+    &#certificates mdui-card {
+        padding: 1em;
         flex-wrap: wrap;
 
         & a {
-            min-width: 200px;
-            width: 25%;
+            min-width: 150px;
+            width: 15%;
+        }
+    }
+
+    &#projects div {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        & mdui-card {
+            & section {
+                margin: 1em;
+                padding: 1em;
+                display: flex;
+                gap: 2rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                & article {
+                    & h3 {
+                        font-size: 2em;
+                        margin: 0.5em 0;
+                    }
+                    & p {
+                        margin: 0;
+                    }
+                    width: 420px;
+                }
+                & aside {
+                    display: flex;
+                    justify-content: center;
+                    width: 380px;
+                    gap: 1em;
+                    & img {
+                        border-radius: var(--mdui-shape-corner-medium);
+                        border: 2px solid rgb(var(--primary));
+                    }
+                }
+                :nth-child(2) > & {
+                    flex-direction: row-reverse;
+                }
+            }
+
+            @media (max-width: 500px) {
+                border: none;
+
+                & section {
+                    padding: 0;
+                }
+            }
         }
     }
 

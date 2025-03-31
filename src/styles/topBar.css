@@ -5,7 +5,7 @@ mdui-top-app-bar {
     background: transparent;
     box-shadow: none;
 
-    @media (max-width: 1150px) {
+    @media (max-width: 1500px) {
         backdrop-filter: blur(5px);
     }
 
