@@ -23,28 +23,6 @@ mdui-card {
 }
 
 main > * > section {
-    display: flex;
-    flex-direction: column;
-    scroll-margin-top: 1em;
-
-    & div,
-    mdui-card {
-        display: flex;
-        justify-content: center;
-        gap: 1em;
-    }
-
-    gap: 0.5em;
-    padding: 1em 2em;
-
-    & h2 {
-        font-size: 2em;
-    }
-
-    & p {
-        font-size: 1.3em;
-    }
-
     &#certificates mdui-card {
         padding: 1em;
         flex-wrap: wrap;
@@ -64,6 +42,14 @@ main > * > section {
         flex-direction: column;
         gap: 1em;
         & mdui-card {
+            @media (max-width: 500px) {
+                border: none;
+
+                & section {
+                    padding: 0;
+                }
+            }
+
             & section {
                 margin: 1em;
                 padding: 1em;
@@ -97,14 +83,6 @@ main > * > section {
                 }
                 :nth-child(2) > & {
                     flex-direction: row-reverse;
-                }
-            }
-
-            @media (max-width: 500px) {
-                border: none;
-
-                & section {
-                    padding: 0;
                 }
             }
         }

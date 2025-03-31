@@ -12,9 +12,10 @@ import helpdesk from "../images/projects/helpdesk.jpg"
 import googleCS from "../images/certificates/googleCS.png"
 import metaFrontEnd from "../images/certificates/metaFrontEnd.png"
 import ButtonLink from "../components/ButtonLink.astro"
+import BottomBar from "../components/BottomBar.astro"
 ---
 
-<Layout>
+<Layout title="Home">
     <header id="home">
         <Image src={logoLong} alt="Henry Hiles" />
         <span>Multiplatform Flutter Developer & Front-End Web Developer</span>
@@ -219,4 +220,5 @@ import ButtonLink from "../components/ButtonLink.astro"
             </ButtonLink>
         </section>
     </mdui-card>
+    <BottomBar slot="navbar" />
 </Layout>

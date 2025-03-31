@@ -31,7 +31,7 @@ body {
     margin: 0;
 
     background: radial-gradient(
-            circle 75vw at -25vw -20vh,
+            circle 80vw at -25vw -20vh,
             var(--circle-color),
             transparent
         ),
@@ -54,6 +54,30 @@ main {
     gap: 2em;
 
     padding: 1em;
+
+    & > * > section {
+        display: flex;
+        flex-direction: column;
+        scroll-margin-top: 1em;
+
+        & div,
+        mdui-card {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        gap: 0.5em;
+        padding: 1em 2em;
+
+        & h2 {
+            font-size: 2em;
+        }
+
+        & p {
+            font-size: 1.3em;
+        }
+    }
 }
 
 mdui-divider {
