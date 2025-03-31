@@ -1,0 +1,9 @@
+{
+    "contacts": [
+        {
+            "matrix_id": "@quadradical:henryhiles.com",
+            "email_address": "henry@henryhiles.com",
+            "role": "m.role.admin"
+        }
+    ]
+}
