@@ -1,7 +1,7 @@
 {
     "contacts": [
         {
-            "matrix_id": "@quadradical:henryhiles.com",
+            "matrix_id": "@quadradical:federated.nexus",
             "email_address": "henry@henryhiles.com",
             "role": "m.role.admin"
         }

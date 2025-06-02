@@ -1,8 +1,8 @@
 {
     "m.homeserver": {
-        "base_url": "https://matrix.henryhiles.com",
+        "base_url": "https://matrix.federated.nexus",
         "org.matrix.msc3575.proxy": {
-            "url": "https://matrix.henryhiles.com"
+            "url": "https://matrix.federated.nexus"
         }
     }
 }
