@@ -10,7 +10,6 @@
     },
     "dependencies": {
         "astro": "^5.1.8",
-        "mdui": "^2.1.3",
         "sharp": "^0.33.5"
     }
 }
