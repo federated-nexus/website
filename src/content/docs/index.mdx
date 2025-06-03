@@ -1,0 +1,44 @@
+---
+title: Home
+template: splash
+hero:
+    title: Experience free, fast, and private software with Federated Nexus
+    tagline: Federated Nexus is a community resource hosting multiple FOSS (especially federated) services, including Matrix and Forgejo.
+    image:
+        file: ../../images/icon.svg
+    actions:
+        - text: Apply to Join
+          icon: email
+          link: "mailto:henry@henryhiles.com?subject=Federated%20Nexus%20Account%20Application&body=Hello%2C%0A%0AI%20would%20like%20to%20have%20a%20Federated%20Nexus%20account%20for%20the%20following%20services%3A%0A-%20%5B%20%5D%20Matrix%0A-%20%5B%20%5D%20Forgejo%0A%0AI%20would%20like%20this%20username%3A%0A%0AI%20agree%20not%20to%20be%20homophobic%2C%20bigoted%2C%20unfriendly%2C%20etc..."
+        - text: Join our Matrix room
+          variant: minimal
+          icon: matrix
+          link: "https://matrix.to/#/#community:federated.nexus"
+---
+
+import { CardGrid, Card } from "@astrojs/starlight/components"
+
+<CardGrid>
+    <Card title="Private and Free Communications" icon="comment">
+        Federated Nexus hosts a free [Matrix](https://matrix.org) instance,
+        using the [Grapevine](https://grapevine.computer.surgery/) software.
+        Matrix is an open-source communications platform, allowing you to chat
+        to communities of your choice.
+    </Card>
+    <Card title="A Fast and Free Home for Your Code" icon="seti:git">
+        We host a free instance of [Forgejo](https://forgejo.org) at
+        [git.federated.nexus](https://git.federated.nexus). Forgejo is a free
+        and open source git forge, that (unlike GitHub) will never train an AI
+        on your code. 🙃
+    </Card>
+    <Card title="Friendly Community" icon="heart">
+        We aim to maintain a friendly, diverse, and inclusive community, come
+        join us! But be aware, I'm not afraid to hoist the ban hammer against
+        any bigoted, homophobic, or otherwise unfriendly people.
+    </Card>
+    <Card title="More Coming Soon?" icon="document">
+        We still have a fair bit of room on the Federated Nexus servers, so
+        we're open to hosting any useful new software. Let us know in our
+        [Matrix room](https://matrix.to/#/#community:federated.nexus)!
+    </Card>
+</CardGrid>
