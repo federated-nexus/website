@@ -21,15 +21,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: denoland/setup-deno@61fe2df320078202e33d7d5ad347e7dcfa0e8f31
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          deno-version: v2.1.5
+          node-version: "20"
 
       - name: Install dependencies
-        run: deno i
+        run: npm i
 
       - name: Build with Astro
-        run: deno run astro build
+        run: npm run astro build
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
