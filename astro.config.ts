@@ -1,8 +1,6 @@
 import { defineConfig, passthroughImageService } from "astro/config"
 import starlight from "@astrojs/starlight"
 
-const logo = "./src/images/icon.svg"
-
 export default defineConfig({
     trailingSlash: "never",
     build: { format: "directory" },
@@ -11,9 +9,9 @@ export default defineConfig({
             title: "Federated Nexus",
             description:
                 "Federated Nexus is a community resource hosting multiple FOSS (especially federated) services, including Matrix and Forgejo.",
-            favicon: logo,
+            favicon: "/images/icon.svg",
             logo: {
-                src: logo,
+                src: "./src/images/icon.svg",
             },
             social: [
                 {
