@@ -1,0 +1,49 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro"
+import "../styles/login.css"
+---
+
+<StarlightPage
+    frontmatter={{ title: "Sign In to Federated Nexus", template: "splash" }}
+>
+    <form method="post" action="http://auth.federated.nexus/login">
+        <input type="hidden" name="nonce" />
+        <input type="hidden" name="scope" />
+        <input type="hidden" name="state" />
+        <input type="hidden" name="client_id" />
+        <input type="hidden" name="redirect_uri" />
+
+        <label>
+            Username
+            <input type="text" name="username" />
+        </label>
+        <label>
+            Password
+            <input type="password" name="password" />
+        </label>
+
+        <button class="sl-link-button astro-e5owd36c primary" type="submit">
+            Submit
+        </button>
+
+        <a href="/">Don't have an account? Apply at our home page.</a>
+    </form>
+</StarlightPage>
+
+<script>
+    const params = new URLSearchParams(window.location.search)
+
+    for (const name of [
+        "client_id",
+        "nonce",
+        "scope",
+        "redirect_uri",
+        "state",
+    ]) {
+        const input = document.querySelector(
+            `input[name="${name}"]`
+        ) as HTMLInputElement
+
+        if (input && params.has(name)) input.value = params.get(name)!
+    }
+</script>
