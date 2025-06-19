@@ -6,12 +6,11 @@ import "../styles/login.css"
 <StarlightPage
     frontmatter={{ title: "Sign In to Federated Nexus", template: "splash" }}
 >
-    <form method="post" action="http://auth.federated.nexus/login">
-        <input type="hidden" name="nonce" />
-        <input type="hidden" name="scope" />
-        <input type="hidden" name="state" />
-        <input type="hidden" name="client_id" />
+    <form method="post" action="https://auth.federated.nexus/login">
         <input type="hidden" name="redirect_uri" />
+        <input type="hidden" name="state" />
+        <input type="hidden" name="user_id" />
+        <input type="hidden" name="access_token" />
 
         <label>
             Username
@@ -22,9 +21,8 @@ import "../styles/login.css"
             <input type="password" name="password" />
         </label>
 
-        <button class="sl-link-button astro-e5owd36c primary" type="submit">
-            Submit
-        </button>
+        <span id="error"></span>
+        <button type="submit"><span>Submit</span></button>
 
         <a href="/">Don't have an account? Apply at our home page.</a>
     </form>
@@ -32,18 +30,57 @@ import "../styles/login.css"
 
 <script>
     const params = new URLSearchParams(window.location.search)
-
-    for (const name of [
-        "client_id",
-        "nonce",
-        "scope",
-        "redirect_uri",
-        "state",
-    ]) {
+    for (const name of ["redirect_uri", "state"]) {
         const input = document.querySelector(
             `input[name="${name}"]`
         ) as HTMLInputElement
-
         if (input && params.has(name)) input.value = params.get(name)!
     }
+
+    const form = document.querySelector("form")!
+    const error = document.querySelector("#error")! as HTMLSpanElement
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault()
+
+        error.style.display = "none"
+        const username = form.username.value
+        const password = form.password.value
+
+        try {
+            const res = await fetch(
+                "https://matrix.federated.nexus/_matrix/client/v3/login",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        type: "m.login.password",
+                        identifier: { type: "m.id.user", user: username },
+                        password,
+                    }),
+                }
+            )
+
+            if (!res.ok) {
+                throw new Error((await res.json())["error"])
+            }
+
+            const data = await res.json()
+
+            const id = form.querySelector(
+                'input[name="user_id"]'
+            ) as HTMLInputElement
+            id.value = data.user_id
+
+            const token = form.querySelector(
+                'input[name="access_token"]'
+            ) as HTMLInputElement
+
+            token.value = "data.access_token"
+
+            form.submit()
+        } catch (err: any) {
+            error.textContent = err.message || "Login failed"
+            error.style.display = "block"
+        }
+    })
 </script>

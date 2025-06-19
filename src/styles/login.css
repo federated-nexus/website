@@ -19,8 +19,23 @@ body {
         }
 
         & button {
-            margin-top: 1.4rem;
+            margin: 1.4rem 0;
             cursor: pointer;
+            border: none;
+            border-radius: 999rem;
+            gap: 0.5em;
+            line-height: 1.2;
+
+            background: var(--sl-color-text-accent);
+            color: var(--sl-color-black);
+
+            font-size: var(--sl-text-base);
+            padding: 1rem 1.25rem;
+        }
+
+        & #error {
+            margin-top: 1rem;
+            color: var(--sl-color-red);
         }
     }
 }
