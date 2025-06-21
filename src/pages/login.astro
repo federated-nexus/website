@@ -14,14 +14,17 @@ import "../styles/login.css"
 
         <label>
             Username
-            <input type="text" name="username" />
+            <input type="text" />
         </label>
         <label>
             Password
-            <input type="password" name="password" />
+            <input type="password" />
         </label>
 
-        <span id="error"></span>
+        <noscript id="error">
+            This form will not function without JavaScript.
+        </noscript>
+        <span id="error"> </span>
         <button type="submit"><span>Submit</span></button>
 
         <a href="/">Don't have an account? Apply at our home page.</a>
@@ -43,8 +46,12 @@ import "../styles/login.css"
         e.preventDefault()
 
         error.style.display = "none"
-        const username = form.username.value
-        const password = form.password.value
+        const username = (
+            form.querySelector('[type="text"') as HTMLInputElement
+        ).value
+        const password = (
+            form.querySelector('[type="password"') as HTMLInputElement
+        ).value
 
         try {
             const res = await fetch(
@@ -80,7 +87,6 @@ import "../styles/login.css"
             form.submit()
         } catch (err: any) {
             error.textContent = err.message || "Login failed"
-            error.style.display = "block"
         }
     })
 </script>
