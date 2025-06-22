@@ -7,10 +7,10 @@ import "../styles/login.css"
     frontmatter={{ title: "Sign In to Federated Nexus", template: "splash" }}
 >
     <form method="post" action="https://auth.federated.nexus/login">
-        <input type="hidden" name="redirect_uri" />
         <input type="hidden" name="state" />
         <input type="hidden" name="user_id" />
         <input type="hidden" name="access_token" />
+        <input type="hidden" name="redirect_uri" />
 
         <label>
             Username
