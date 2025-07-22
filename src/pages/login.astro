@@ -8,6 +8,7 @@ import "../styles/login.css"
 >
     <form method="post" action="https://auth.federated.nexus/login">
         <input type="hidden" name="state" />
+        <input type="hidden" name="nonce" />
         <input type="hidden" name="user_id" />
         <input type="hidden" name="access_token" />
         <input type="hidden" name="redirect_uri" />
@@ -33,7 +34,7 @@ import "../styles/login.css"
 
 <script>
     const params = new URLSearchParams(window.location.search)
-    for (const name of ["redirect_uri", "state"]) {
+    for (const name of ["redirect_uri", "state", "nonce"]) {
         const input = document.querySelector(
             `input[name="${name}"]`
         ) as HTMLInputElement
@@ -81,7 +82,6 @@ import "../styles/login.css"
             const token = form.querySelector(
                 'input[name="access_token"]'
             ) as HTMLInputElement
-
             token.value = data.access_token
 
             form.submit()
