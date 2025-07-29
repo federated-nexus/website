@@ -62,6 +62,8 @@ import "../styles/login.css"
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         type: "m.login.password",
+                        device_id: "nexus",
+                        initial_device_display_name: "Federated Nexus Login",
                         identifier: { type: "m.id.user", user: username },
                         password,
                     }),
