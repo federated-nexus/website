@@ -47,14 +47,19 @@ import "../styles/login.css"
         e.preventDefault()
 
         error.style.display = "none"
-        const username = (
-            form.querySelector('[type="text"]') as HTMLInputElement
-        ).value
-        const password = (
-            form.querySelector('[type="password"]') as HTMLInputElement
-        ).value
 
         try {
+            const username = (
+                form.querySelector('[type="text"]') as HTMLInputElement
+            ).value
+            const password = (
+                form.querySelector('[type="password"]') as HTMLInputElement
+            ).value
+
+            const session =
+                localStorage.getItem("session") ?? crypto.randomUUID()
+            localStorage.setItem("session", session)
+
             const res = await fetch(
                 "https://matrix.federated.nexus/_matrix/client/v3/login",
                 {
@@ -62,8 +67,8 @@ import "../styles/login.css"
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         type: "m.login.password",
-                        device_id: "nexus",
-                        initial_device_display_name: "Federated Nexus Login",
+                        device_id: session,
+                        initial_device_display_name: `Federated Nexus Login from ${navigator.userAgent}`,
                         identifier: { type: "m.id.user", user: username },
                         password,
                     }),
