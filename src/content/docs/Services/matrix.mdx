@@ -19,3 +19,11 @@ We recommend you to use one of the following clients for the best possible exper
 
 - [Cinny](https://cinny.in): Cinny provides a Discord-like UI and some really nice features. You can use it on the web or as a Tauri app, and it works on Linux phones very well.
 - [FluffyChat](https://fluffychat.im): FluffyChat is made with flutter, so it has great cross-platform support, so it's usable on iOS, Android, Linux, Web, etc. It also has some features that Cinny doesn't, but Cinny is slightly more intuitive in my opinion.
+
+### Bridges
+
+Federated Nexus hosts multiple "bridges" and "puppets", to let you talk to people on other platforms from Matrix:
+
+- [Out of Your Element](https://gitdab.com/cadence/out-of-your-element) (OOYE, Discord bridge): You can control OOYE via its web UI: https://ooye.federated.nexus. From this intuitive web UI, Discord server admins can log into their Discord account, and easily set up a bridged Matrix space using the "Easy mode" option. Or, for the more advanced users, they can use the "Self-service" option to manually control the bridge, rather than creating a whole new Matrix space.
+- [mautrix-gmessages](https://docs.mau.fi/bridges/go/gmessages/index.html) (SMS puppet): You can use mautrix-gmessages to bridge SMS chats over to Matrix, including both reading and sending SMS. You can set it up for yourself with [their instructions](https://docs.mau.fi/bridges/go/gmessages/authentication.html).
+- [mautrix-whatsapp](https://docs.mau.fi/bridges/go/whatsapp/index.html) (WhatsApp puppet): With mautrix-whatsapp, you can bridge your WhatsApp chats to Matrix, in a very similar way to the SMS bridge. See [their instructions](https://docs.mau.fi/bridges/go/whatsapp/authentication.html) for setup.
