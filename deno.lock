@@ -3,6 +3,8 @@
   "specifiers": {
     "npm:@astrojs/starlight@~0.34.3": "0.34.3_astro@5.1.8__vite@6.0.11__zod@3.24.1",
     "npm:astro@^5.1.8": "5.1.8_vite@6.0.11_zod@3.24.1",
+    "npm:prettier-plugin-astro@~0.14.1": "0.14.1",
+    "npm:prettier@^3.6.2": "3.6.2",
     "npm:sharp@~0.33.5": "0.33.5",
     "npm:starlight@~0.3.9": "0.3.9"
   },
@@ -547,9 +549,6 @@
         "@types/estree",
         "estree-walker@2.0.2",
         "picomatch@4.0.2"
-      ],
-      "optionalPeers": [
-        "rollup"
       ]
     },
     "@rollup/rollup-android-arm-eabi@4.31.0": {
@@ -1201,6 +1200,7 @@
         "@esbuild/win32-ia32",
         "@esbuild/win32-x64"
       ],
+      "scripts": true,
       "bin": true
     },
     "escape-string-regexp@5.0.0": {
@@ -2481,6 +2481,18 @@
         "which-pm"
       ]
     },
+    "prettier-plugin-astro@0.14.1": {
+      "integrity": "sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==",
+      "dependencies": [
+        "@astrojs/compiler",
+        "prettier",
+        "sass-formatter"
+      ]
+    },
+    "prettier@3.6.2": {
+      "integrity": "sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==",
+      "bin": true
+    },
     "prismjs@1.29.0": {
       "integrity": "sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q=="
     },
@@ -2785,6 +2797,15 @@
         "queue-microtask"
       ]
     },
+    "s.color@0.0.15": {
+      "integrity": "sha512-AUNrbEUHeKY8XsYr/DYpl+qk5+aM+DChopnWOPEzn8YKzOhv4l2zH6LzZms3tOZP3wwdOyc0RmTciyi46HLIuA=="
+    },
+    "sass-formatter@0.7.9": {
+      "integrity": "sha512-CWZ8XiSim+fJVG0cFLStwDvft1VI7uvXdCNJYXhDvowiv+DsbD1nXLiQ4zrE5UBvj5DWZJ93cwN0NX5PMsr1Pw==",
+      "dependencies": [
+        "suf-log"
+      ]
+    },
     "sax@1.4.1": {
       "integrity": "sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg=="
     },
@@ -2819,7 +2840,8 @@
         "@img/sharp-wasm32",
         "@img/sharp-win32-ia32",
         "@img/sharp-win32-x64"
-      ]
+      ],
+      "scripts": true
     },
     "shiki@1.29.1": {
       "integrity": "sha512-TghWKV9pJTd/N+IgAIVJtr0qZkB7FfFCUrrEJc0aRmZupo3D1OCVRknQWVRVA7AX/M0Ld7QfoAruPzr3CnUJuw==",
@@ -2937,6 +2959,12 @@
         "inline-style-parser"
       ]
     },
+    "suf-log@2.5.3": {
+      "integrity": "sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow==",
+      "dependencies": [
+        "s.color"
+      ]
+    },
     "tinyexec@0.3.2": {
       "integrity": "sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA=="
     },
@@ -2954,9 +2982,6 @@
     },
     "tsconfck@3.1.4": {
       "integrity": "sha512-kdqWFGVJqe+KGYvlSO9NIaWn9jT1Ny4oKVzAJsKii5eoE9snzTJzL4+MMVOMn+fikWGFmKEylcXL710V/kIPJQ==",
-      "optionalPeers": [
-        "typescript"
-      ],
       "bin": true
     },
     "tslib@2.8.1": {
@@ -3083,26 +3108,6 @@
         "node-fetch-native",
         "ofetch",
         "ufo"
-      ],
-      "optionalPeers": [
-        "@azure/app-configuration@^1.8.0",
-        "@azure/cosmos@^4.2.0",
-        "@azure/data-tables@^13.3.0",
-        "@azure/identity@^4.5.0",
-        "@azure/keyvault-secrets@^4.9.0",
-        "@azure/storage-blob@^12.26.0",
-        "@capacitor/preferences@^6.0.3",
-        "@deno/kv@>=0.8.4",
-        "@netlify/blobs@^6.5.0 || ^7.0.0 || ^8.1.0",
-        "@planetscale/database@^1.19.0",
-        "@upstash/redis@^1.34.3",
-        "@vercel/blob@>=0.27.0",
-        "@vercel/kv@^1.0.1",
-        "aws4fetch@^1.0.20",
-        "db0@>=0.2.1",
-        "idb-keyval@^6.2.1",
-        "ioredis@^5.4.2",
-        "uploadthing@^7.4.1"
       ]
     },
     "util-deprecate@1.0.2": {
@@ -3138,19 +3143,6 @@
       ],
       "optionalDependencies": [
         "fsevents"
-      ],
-      "optionalPeers": [
-        "@types/node@^18.0.0 || ^20.0.0 || >=22.0.0",
-        "jiti@>=1.21.0",
-        "less@*",
-        "lightningcss@^1.21.0",
-        "sass@*",
-        "sass-embedded@*",
-        "stylus@*",
-        "sugarss@*",
-        "terser@^5.16.0",
-        "tsx@^4.8.1",
-        "yaml@^2.4.2"
       ],
       "bin": true
     },
