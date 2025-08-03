@@ -1,6 +1,6 @@
 ---
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro"
-import "../styles/login.css"
+import "../styles/page.css"
 ---
 
 <StarlightPage
@@ -28,7 +28,7 @@ import "../styles/login.css"
         <span id="error"> </span>
         <button type="submit"><span>Submit</span></button>
 
-        <a href="/">Don't have an account? Apply at our home page.</a>
+        <a href="/register">Don't have an account? Sign up now!</a>
     </form>
 </StarlightPage>
 
@@ -36,7 +36,7 @@ import "../styles/login.css"
     const params = new URLSearchParams(window.location.search)
     for (const name of ["redirect_uri", "state", "nonce"]) {
         const input = document.querySelector(
-            `input[name="${name}"]`,
+            `input[name="${name}"]`
         ) as HTMLInputElement
         if (input && params.has(name)) input.value = params.get(name)!
     }
@@ -72,7 +72,7 @@ import "../styles/login.css"
                         identifier: { type: "m.id.user", user: username },
                         password,
                     }),
-                },
+                }
             )
 
             if (!res.ok) {
@@ -82,12 +82,12 @@ import "../styles/login.css"
             const data = await res.json()
 
             const id = form.querySelector(
-                'input[name="user_id"]',
+                'input[name="user_id"]'
             ) as HTMLInputElement
             id.value = data.user_id
 
             const token = form.querySelector(
-                'input[name="access_token"]',
+                'input[name="access_token"]'
             ) as HTMLInputElement
             token.value = data.access_token
 
