@@ -2,7 +2,52 @@
 title: Matrix
 ---
 
-[Matrix](https://matrix.org) is the hub of Federated Nexus, as everything else authenticates against Matrix. This means that when you change your password on Matrix, you'll need to log into everything else with the new password. We provide a homeserver on the federated.nexus domain.
+Matrix is an open-source communications platform, allowing you to chat to communities of your choice. End to end encryption is a large focus of Matrix, and it's also completely open source.
+
+## Comparison to Discord
+
+Matrix has many parallels to Discord, but also many differences. This comparison may be useful to you when migrating:
+
+- Instead of Discord "channels", you have Matrix "rooms". Rooms can both be joined with in a space (explained below), or standalone, unlike Discord. They can be set up to be end to end encrypted, but for large rooms it's more reliable to run without encryption.
+- The equivalent of a Discord "server" is a matrix "space". Spaces are essentially a directory of rooms, where they are grouped under one icon (depending on your client), and rooms within the space are shown and are available to join. However, you do not have to join all rooms in a Matrix space.
+
+## Choosing a Client
+
+Matrix is purely a protocol, and you can use any "client" you want. Clients are front-ends for Matrix, basically the way you actually see messages and join rooms. There are countless clients, but we recommend one of the following for the best possible experience:
+
+- [Cinny](https://cinny.in): Cinny provides a Discord-like UI and some really nice features. You can use it on the web or as a Tauri app, and it works on Linux phones very well.
+- [FluffyChat](https://fluffychat.im): FluffyChat is made with flutter, so it has great cross-platform support, so it's usable on iOS, Android, Linux, Web, etc. It also has some features that Cinny doesn't, but Cinny is slightly more intuitive in my opinion.
+
+## How to Use
+
+The process of signing into your Federated Nexus Matrix account depends on what client you use. I will be showcasing Cinny here, but the process isn't too different between clients.
+
+### Opening Cinny
+
+Cinny can be used as either a website, or native app.  
+You can find the website here: https://app.cinny.in/login/federated.nexus
+
+Or download the app from here: https://github.com/cinnyapp/cinny-desktop/releases/latest  
+On Linux, you can of course also get Cinny from
+[Flathub](https://flathub.org/apps/in.cinny.Cinny) or your distro's
+repositories.
+
+### Logging In
+
+Firstly, make sure that `federated.nexus`, is set as your "Homeserver". The field shows as a dropdown, but you can type it in manually.
+![The Cinny login page, showing "federated.nexus" as the value for "Homeserver"](../../../images/matrix/homeserver.png)
+Then, just enter your username and password, and hit log in!
+
+### Joining the Community Room
+
+After logging in, you should notice a notification in your inbox, in the bottom left corner of your screen:
+![An inbox icon, with a badge that marks one notification](../../../images/matrix/badge.png)
+
+Click there, and you will be greeted with the invites page. Click public, which has a notification next to it.
+![The Cinny invites page, showing no Primary invites, but one Public invite](../../../images/matrix/invite.png)
+
+From there, accept the invitation to the "Federated Nexus Community" room, and you're good to go!
+![The Cinny invites page, showing an invite from nexusbot to the Federated Nexus Community room](../../../images/matrix/accept.png)
 
 ## Homeserver
 
@@ -11,13 +56,6 @@ Federated Nexus runs [Grapevine](https://grapevine.computer.surgery/), a fork of
 - Simplified Sliding Sync (SSS): SSS is coming soon, but right now it means you may not be able to use next-gen clients like Element X.
 - Rooms older than v6: In Matrix, each "room" (equivalent to a Discord channel) follows a certain version of the matrix spec. The latest room version is v10, and v6 is _very_ old. However, some rooms don't want to upgrade, as the process can be quite painful, so they stay at old versions like v2. With Grapevine, you won't be able to join these rooms, sorry. Currently, Grapevine doesn't support v12 (the newest version) either, but we expect this to change soon.
 
-## Clients
-
-We recommend you to use one of the following clients for the best possible experience, but most should work:
-
-- [Cinny](https://cinny.in): Cinny provides a Discord-like UI and some really nice features. You can use it on the web or as a Tauri app, and it works on Linux phones very well.
-- [FluffyChat](https://fluffychat.im): FluffyChat is made with flutter, so it has great cross-platform support, so it's usable on iOS, Android, Linux, Web, etc. It also has some features that Cinny doesn't, but Cinny is slightly more intuitive in my opinion.
-
 ## Bridges
 
 Federated Nexus hosts multiple "bridges" and "puppets", to let you talk to people on other platforms from Matrix:
@@ -25,3 +63,7 @@ Federated Nexus hosts multiple "bridges" and "puppets", to let you talk to peopl
 - [Out of Your Element](https://gitdab.com/cadence/out-of-your-element) (OOYE, Discord bridge): You can control OOYE via its web UI: https://ooye.federated.nexus. From this intuitive web UI, Discord server admins can log into their Discord account, and easily set up a bridged Matrix space using the "Easy mode" option. Or, for the more advanced users, they can use the "Self-service" option to manually control the bridge, rather than creating a whole new Matrix space.
 - [mautrix-gmessages](https://docs.mau.fi/bridges/go/gmessages/index.html) (SMS puppet): You can use mautrix-gmessages to bridge SMS chats over to Matrix, including both reading and sending SMS. You can set it up for yourself with [their instructions](https://docs.mau.fi/bridges/go/gmessages/authentication.html).
 - [mautrix-whatsapp](https://docs.mau.fi/bridges/go/whatsapp/index.html) (WhatsApp puppet): With mautrix-whatsapp, you can bridge your WhatsApp chats to Matrix, in a very similar way to the SMS bridge. See [their instructions](https://docs.mau.fi/bridges/go/whatsapp/authentication.html) for setup.
+
+## Authentication
+
+[Matrix](https://matrix.org) is the hub of Federated Nexus, everything else authenticates against Matrix. This means that when you change your password on Matrix, you'll need to log into everything else with the new password.
