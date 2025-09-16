@@ -25,6 +25,29 @@ export default defineConfig({
                     href: "https://wetdry.world/@QuadRadical",
                 },
             ],
+
+            defaultLocale: "root",
+            locales: {
+                root: {
+                    label: "English",
+                    lang: "en",
+                },
+
+                "fr-fr": {
+                    label: "Français",
+                    lang: "fr-FR",
+                },
+
+                "uk-ua": {
+                    label: "Українська",
+                    lang: "uk-UA",
+                },
+
+                "ru-ru": {
+                    label: "Русский",
+                    lang: "ru-RU",
+                },
+            },
         }),
     ],
     image: { service: passthroughImageService() },
