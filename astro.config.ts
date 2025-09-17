@@ -16,7 +16,7 @@ export default defineConfig({
             social: [
                 {
                     icon: "seti:git",
-                    label: "Source Code",
+                    label: "Git",
                     href: "https://git.federated.nexus",
                 },
                 {
