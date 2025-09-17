@@ -30,7 +30,8 @@ export default defineConfig({
                 {
                     label: "Services",
                     translations: {
-                        // "fr-FR": "Services translation here",
+                        "ru-RU": "Услуги",
+                        "uk-UA": "Послуги",
                     },
                     autogenerate: { directory: "services" },
                 },
