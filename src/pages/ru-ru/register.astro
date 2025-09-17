@@ -1,0 +1,26 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro"
+import "../styles/page.css"
+---
+
+<StarlightPage
+    frontmatter={{ title: "Register for Federated Nexus", template: "splash" }}
+>
+    <form method="post" action="https://register.federated.nexus">
+        <label>
+            Username (alphanumeric only, no spaces)
+            <input
+                name="username"
+                type="text"
+                required
+                pattern="^[A-Za-z0-9]+$"
+            />
+        </label>
+        <label>
+            Email
+            <input name="email" type="email" required />
+        </label>
+
+        <button type="submit"><span>Submit</span></button>
+    </form>
+</StarlightPage>
