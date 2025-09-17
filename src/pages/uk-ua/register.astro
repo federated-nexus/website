@@ -1,14 +1,14 @@
 ---
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro"
-import "../styles/page.css"
+import "../../styles/page.css"
 ---
 
 <StarlightPage
-    frontmatter={{ title: "Register for Federated Nexus", template: "splash" }}
+    frontmatter={{ title: "Реєстрація в Federated Nexus", template: "splash" }}
 >
     <form method="post" action="https://register.federated.nexus">
         <label>
-            Username (alphanumeric only, no spaces)
+            Ім'я користувача (тільки буквено-цифрові символи, без пробілів)
             <input
                 name="username"
                 type="text"
@@ -17,10 +17,10 @@ import "../styles/page.css"
             />
         </label>
         <label>
-            Email
+            E-mail
             <input name="email" type="email" required />
         </label>
 
-        <button type="submit"><span>Submit</span></button>
+        <button type="submit"><span>Надіслати</span></button>
     </form>
 </StarlightPage>

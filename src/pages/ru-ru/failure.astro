@@ -1,16 +1,17 @@
 ---
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro"
-import "../styles/page.css"
+import "../../styles/page.css"
 ---
 
 <StarlightPage
     frontmatter={{
-        title: "Registration failed",
+        title: "Не удалось выполнить регистрацию",
         template: "splash",
     }}
 >
-    An error occurred while we were registering you. Try again later, and if the
-    error persists, join our <a
-        href="https://matrix.to/#/#community:federated.nexus">Matrix room</a
-    > let me know.
+    При регистрации произошла ошибка. Повторите попытку позже, и если ошибка не
+    исчезнет, присоединяйтесь к нашей <a
+        href="https://matrix.to/#/#community:federated.nexus"
+        >комнате в Matrix</a
+    > и сообщите мне об этой ошибке.
 </StarlightPage>

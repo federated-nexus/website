@@ -1,10 +1,10 @@
 ---
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro"
-import "../styles/page.css"
+import "../../styles/page.css"
 ---
 
 <StarlightPage
-    frontmatter={{ title: "Sign In to Federated Nexus", template: "splash" }}
+    frontmatter={{ title: "Connexion à Federated Nexus", template: "splash" }}
 >
     <form method="post" action="https://auth.federated.nexus/login">
         <input type="hidden" name="state" />
@@ -14,21 +14,23 @@ import "../styles/page.css"
         <input type="hidden" name="redirect_uri" />
 
         <label>
-            Username
+            Nom d'utilisateur
             <input type="text" />
         </label>
         <label>
-            Password
+            Mot de passe
             <input type="password" />
         </label>
 
         <noscript id="error">
-            This form will not function without JavaScript.
+            Ce formulaire ne fonctionnera pas sans JavaScript.
         </noscript>
         <span id="error"> </span>
-        <button type="submit"><span>Submit</span></button>
+        <button type="submit"><span>Envoyer</span></button>
 
-        <a href="/register">Don't have an account? Sign up now!</a>
+        <a href="/register"
+            >Vous n'avez pas encore de compte ? Inscrivez-vous dès maintenant !</a
+        >
     </form>
 </StarlightPage>
 

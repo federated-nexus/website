@@ -1,0 +1,51 @@
+---
+title: Accueil
+template: splash
+hero:
+    title: Découvrez des logiciels gratuits, rapides et privés avec Federated Nexus
+    tagline: Federated Nexus est une ressource communautaire hébergeant plusieurs services FOSS (en particulier fédérés), notamment Matrix et Forgejo.
+    image:
+        file: ../../../images/icon.svg
+    actions:
+        - text: Postuler
+          icon: email
+          link: register
+        - text: Rejoignez notre salle Matrix
+          variant: minimal
+          icon: matrix
+          link: https://matrix.to/#/#community:federated.nexus
+---
+
+import { CardGrid, Card } from "@astrojs/starlight/components"
+
+<CardGrid>
+
+    <Card title="Communications privées et libres" icon="comment">
+        Federated Nexus héberge une instance gratuite de [Matrix](https://matrix.org), en utilisant le logiciel [Continuwuity](https://continuwuity.org/). Matrix est une plateforme de communication open source qui vous permet de discuter avec les communautés de votre choix. Nous hébergeons également plusieurs ponts Matrix, notamment un pont Discord, un puppet WhatsApp et même un puppet SMS ! [En savoir plus...](services/matrix)
+    </Card>
+
+    <Card title="Écriture collaborative Open Source" icon="document">
+    	Nous hébergeons [LaSuite Docs](https://github.com/suitenumerique/docs), une alternative libre et open source à Google Docs, conçue pour une collaboration fluide en temps réel. Vous pouvez rédiger des documents dans une interface graphique similaire à celle de Google Docs, puis les exporter au format DocX ou PDF. Vous pouvez également ajouter des sous-documents et partager des liens avec d'autres personnes, même celles qui ne possèdent pas de compte. [En savoir plus...](services/docs)
+    </Card>
+
+    <Card title="Recherche rapide et privée simplifiée" icon="magnifier">
+        Nous exploitons une instance [SearXNG](https://searxng.org) qui vous permet de vous connecter à l'aide de votre compte Federated Nexus  et d'effectuer des recherches rapides et axées sur la confidentialité sur le Web, sans aucun suivi, profilage ou publicité intrusive. [En savoir plus...](services/searxng)
+    </Card>
+
+    <Card title="Maison rapide et gratuite pour votre code" icon="seti:git">
+        Nous hébergeons une instance gratuite de [Forgejo](https://forgejo.org) sur [git.federated.nexus](https://git.federated.nexus) ! Forgejo est un git forge open source qui, contrairement à GitHub, n'entraînera jamais d'IA sur votre code 🙃. [En savoir plus...](services/forgejo)
+    </Card>
+
+    <Card title="Naviguer sur Reddit en toute confidentialité" icon="reddit">
+    	[Redlib](https://github.com/redlib-org/redlib) est une interface alternative gratuite et open source pour Reddit, conçue pour supprimer le suivi, les publicités et les distractions. Vous pouvez parcourir les publications, lire les commentaires et vous abonner à des subreddits, sans encombrement ni logiciel espion. [En savoir plus...](services/redlib)
+    </Card>
+
+    <Card title="Communauté amicale et inclusive" icon="heart">
+        Nous souhaitons maintenir une communauté amicale, diversifiée et inclusive. Dans cette optique, je n'hésiterai pas à bannir toute personne intolérante, homophobe ou hostile. Nous suivons le [Contributor Covenant](code).
+    </Card>
+
+    <Card title="Plus à venir bientôt" icon="approve-check">
+        Il nous reste encore pas mal d'espace disponible sur les serveurs Federated Nexus, nous sommes donc ouverts à l'hébergement de tout nouveau logiciel utile. Faites-le nous savoir dans notre [salle Matrix](https://matrix.to/#/#community:federated.nexus) !
+    </Card>
+
+</CardGrid>
