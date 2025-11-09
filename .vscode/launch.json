@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "command": "nix run nixpkgs#deno task dev",
+            "command": "deno task dev",
             "name": "Development server",
             "request": "launch",
             "type": "node-terminal"
