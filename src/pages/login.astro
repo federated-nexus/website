@@ -93,6 +93,7 @@ import "../styles/page.css"
 
             form.submit()
         } catch (err: any) {
+            error.style = ""
             error.textContent = err.message || "Login failed"
         }
     })
