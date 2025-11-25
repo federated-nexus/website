@@ -36,7 +36,7 @@ body {
             padding: 1rem 1.25rem;
         }
 
-        & #error {
+        & .error {
             margin-top: 1rem;
             color: var(--sl-color-red);
         }
