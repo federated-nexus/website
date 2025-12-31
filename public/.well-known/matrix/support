@@ -4,6 +4,10 @@
             "matrix_id": "@quadradical:federated.nexus",
             "email_address": "henry@henryhiles.com",
             "role": "m.role.admin"
+        },
+        {
+            "matrix_id": "@hexaheximal:federated.nexus",
+            "role": "m.role.admin"
         }
     ]
 }
