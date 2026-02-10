@@ -8,7 +8,7 @@
     "org.matrix.msc4143.rtc_foci": [
         {
             "type": "livekit",
-            "livekit_service_url": "https://call.federated.nexus/livekit/sfu"
+            "livekit_service_url": "https://lk-jwt.call.federated.nexus"
         }
     ]
 }
