@@ -58,13 +58,6 @@ Federated Nexus runs [Continuwuity](https://continuwuity.org/), a Rust implement
 
 - Rooms older than v3: In Matrix, each room follows a certain version of the Matrix spec. Continuwuity currently supports room versions v3 to v12, covering the vast majority of rooms. Room version v2 is _very very_ old, and should never be used, but some rooms still use it. With Federated Nexus, you won't be able to join these rooms, sorry.
 
-## Bridges
-
-Federated Nexus hosts multiple puppets to let you talk to people on other platforms from Matrix:
-
-- [mautrix-gmessages](https://docs.mau.fi/bridges/go/gmessages/index.html) (SMS puppet): You can use mautrix-gmessages to bridge SMS chats over to Matrix, including both reading and sending SMS. You can set it up for yourself with [their instructions](https://docs.mau.fi/bridges/go/gmessages/authentication.html).
-- [mautrix-whatsapp](https://docs.mau.fi/bridges/go/whatsapp/index.html) (WhatsApp puppet): With mautrix-whatsapp, you can bridge your WhatsApp chats to Matrix, in a very similar way to the SMS bridge. See [their instructions](https://docs.mau.fi/bridges/go/whatsapp/authentication.html) for setup.
-
 ## Authentication
 
 [Matrix](https://matrix.org) is the hub of Federated Nexus, everything else authenticates against Matrix. This means that when you change your password on Matrix, you'll need to log into everything else with the new password.
