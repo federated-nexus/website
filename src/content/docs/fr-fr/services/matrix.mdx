@@ -56,14 +56,7 @@ Cliquez sur la notification pour accéder à la page des invitations. Cliquez su
 
 Federated Nexus utilise la [Continuwuity](https://continuwuity.org/), une implémentation Rust de la spécification Matrix. Cela signifie qu'il ne dispose pas de toutes les fonctionnalités de [Synapse](https://element-hq.github.io/synapse/latest/), mais qu'il est beaucoup plus performant. Voici quelques fonctionnalités qui font défaut à Grapevine :
 
-- Salles antérieures à la version v3 : dans Matrix, chaque salle suit une certaine version des spécifications Matrix. Continuwuity prend actuellement en charge les versions v3 à v12, qui couvrent la grande majorité des salles. La version v2 est très ancienne et ne devrait plus être utilisée, mais certaines salles l'utilisent encore. Avec Federated Nexus, vous ne pourrez pas rejoindre ces salles, désolé.
-
-## Ponts (Bridges)
-
-Federated Nexus héberge plusieurs « marionnettes » pour vous permettre de communiquer avec des personnes sur d'autres plateformes depuis Matrix :
-
-- [mautrix-gmessages](https://docs.mau.fi/bridges/go/gmessages/index.html) (Marionnette SMS) : Vous pouvez utiliser mautrix-gmessages pour relier les conversations SMS à Matrix, y compris pour lire et envoyer des SMS. Vous pouvez le configurer vous-même en suivant [leurs instructions](https://docs.mau.fi/bridges/go/gmessages/authentication.html).
-- [mautrix-whatsapp](https://docs.mau.fi/bridges/go/whatsapp/index.html) (WhatsApp marionnette) : Avec mautrix-whatsapp, vous pouvez relier vos discussions WhatsApp à Matrix, de manière très similaire au pont SMS. Consultez [leurs instructions](https://docs.mau.fi/bridges/go/whatsapp/authentication.html) pour configurer ça.
+- Salles antérieures à la v3 : Dans Matrix, chaque salle utilise une version spécifique de la spécification Matrix. Continuité prend actuellement en charge les versions v3 à v12, couvrant ainsi la grande majorité des salles. La version v2 est _extrêmement_ ancienne et ne devrait jamais être utilisée, même si certaines salles l'utilisent encore. Avec Federated Nexus, vous ne pourrez pas rejoindre ces salles, désolé.
 
 ## Authentification
 

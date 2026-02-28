@@ -3,7 +3,7 @@ title: Accueil
 template: splash
 hero:
     title: Découvrez des logiciels libres, rapides et privés avec Federated Nexus
-    tagline: Federated Nexus est une ressource communautaire hébergeant plusieurs services FOSS (en particulier fédérés), notamment Matrix et Forgejo.
+    tagline: Federated Nexus est une ressource communautaire hébergeant plusieurs services FOSS (en particulier fédérés), notamment Matrix et Forgejo. Nous avons actuellement <span id="user-count">plus de 450</span> utilisateurs.
     image:
         file: ../../../images/icon.svg
     actions:
@@ -26,7 +26,11 @@ import { CardGrid, Card } from "@astrojs/starlight/components"
 <CardGrid>
 
     <Card title="Communications privées et libres" icon="comment">
-        [Matrix](https://matrix.org) est une plateforme de communication open source. Sur Federated Nexus, elle est représentée par une instance basée sur un logiciel libre [Continuwuity](https://continuwuity.org/). Nous proposons également différents ponts, notamment des marionnettes pour WhatsApp et SMS ! [En savoir plus...](services/matrix)
+        [Matrix](https://matrix.org) est une plateforme de communication open source. Sur Federated Nexus, elle est représentée par une instance basée sur un logiciel libre [Continuwuity](https://continuwuity.org/). [En savoir plus...](services/matrix)
+    </Card>
+
+    <Card title="Maison rapide et libre pour votre code" icon="seti:git">
+        [Forgejo](https://forgejo.org) est un git forge open source qui, contrairement à GitHub, n'entraînera jamais d'IA sur votre code 🙃. Nous en proposons une instance sur [git.federated.nexus](https://git.federated.nexus). [En savoir plus...](services/forgejo)
     </Card>
 
     <Card title="Écriture collaborative Open Source" icon="document">
@@ -35,10 +39,6 @@ import { CardGrid, Card } from "@astrojs/starlight/components"
 
     <Card title="Recherche rapide et privée simplifiée" icon="magnifier">
         [SearXNG](https://searxng.org) vous permet de vous connecter à l'aide de votre compte Federated Nexus et d'effectuer des recherches rapides et axées sur la confidentialité sur le Web, sans aucun suivi, profilage ou publicité intrusive. [En savoir plus...](services/searxng)
-    </Card>
-
-    <Card title="Maison rapide et libre pour votre code" icon="seti:git">
-        [Forgejo](https://forgejo.org) est un git forge open source qui, contrairement à GitHub, n'entraînera jamais d'IA sur votre code 🙃. Nous en proposons une instance sur [git.federated.nexus](https://git.federated.nexus). [En savoir plus...](services/forgejo)
     </Card>
 
     <Card title="Naviguer sur Reddit en toute confidentialité" icon="reddit">
@@ -54,3 +54,13 @@ import { CardGrid, Card } from "@astrojs/starlight/components"
     </Card>
 
 </CardGrid>
+	
+	<script>
+	    {`
+		(async () => {
+			const response = await fetch("https://matrix.federated.nexus/_continuwuity/local_user_count")
+			const json = await response.json();
+			document.querySelector("#user-count").innerText = json["count"]
+		})()
+	`}
+	</script>
