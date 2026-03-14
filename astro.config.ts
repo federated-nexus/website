@@ -2,7 +2,7 @@ import { defineConfig, passthroughImageService } from "astro/config"
 import starlight from "@astrojs/starlight"
 
 export default defineConfig({
-    trailingSlash: "never",
+    trailingSlash: "always",
     build: { format: "directory" },
     integrations: [
         starlight({
