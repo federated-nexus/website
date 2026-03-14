@@ -21,7 +21,7 @@ jobs:
         steps:
             - uses: actions/checkout@v6
 
-            - uses: denoland/setup-deno@v2
+            - uses: denoland/setup-deno@v2.0.3
               with:
                 cache: true
 
@@ -32,7 +32,7 @@ jobs:
               run: deno run astro build
 
             - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
+              uses: actions/upload-pages-artifact@v4
               with:
                   path: dist
 
@@ -46,4 +46,4 @@ jobs:
         steps:
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v4
+              uses: actions/deploy-pages@v4.0.5
