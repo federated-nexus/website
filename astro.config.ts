@@ -36,6 +36,7 @@ export default defineConfig({
                     autogenerate: { directory: "services" },
                 },
                 { slug: "code" },
+                { slug: "privacy-policy" },
                 { slug: "donate" },
             ],
 
