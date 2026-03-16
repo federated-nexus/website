@@ -28,7 +28,8 @@ import "../../styles/page.css"
         <span id="error" class="error"> </span>
         <button type="submit"><span>Отправить</span></button>
 
-        <a href="/register">У вас ещё нет учётной записи? Зарегистрируйтесь!</a>
+        <a href="/register/">У вас ещё нет учётной записи? Зарегистрируйтесь!</a
+        >
     </form>
 </StarlightPage>
 
@@ -36,7 +37,7 @@ import "../../styles/page.css"
     const params = new URLSearchParams(window.location.search)
     for (const name of ["redirect_uri", "state", "nonce"]) {
         const input = document.querySelector(
-            `input[name="${name}"]`
+            `input[name="${name}"]`,
         ) as HTMLInputElement
         if (input && params.has(name)) input.value = params.get(name)!
     }
@@ -72,7 +73,7 @@ import "../../styles/page.css"
                         identifier: { type: "m.id.user", user: username },
                         password,
                     }),
-                }
+                },
             )
 
             if (!res.ok) {
@@ -82,12 +83,12 @@ import "../../styles/page.css"
             const data = await res.json()
 
             const id = form.querySelector(
-                'input[name="user_id"]'
+                'input[name="user_id"]',
             ) as HTMLInputElement
             id.value = data.user_id
 
             const token = form.querySelector(
-                'input[name="access_token"]'
+                'input[name="access_token"]',
             ) as HTMLInputElement
             token.value = data.access_token
 

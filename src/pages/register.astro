@@ -16,6 +16,7 @@ import "../styles/page.css"
                 pattern="^[A-Za-z0-9]+$"
             />
         </label>
+
         <div class="honeypot">
             <input
                 type="text"
@@ -24,9 +25,22 @@ import "../styles/page.css"
                 autocomplete="off"
             />
         </div>
+
         <label>
             Email
             <input name="email" type="email" required />
+        </label>
+
+        <label class="checkbox">
+            <input name="code" type="checkbox" value="yes" required />
+            I have read and agree to the <a href="../code/">Code of Conduct</a>.
+        </label>
+
+        <label class="checkbox">
+            <input name="policy" type="checkbox" value="yes" required />
+            I have read and agree to the <a href="../privacy-policy/"
+                >Privacy Policy</a
+            >.
         </label>
 
         <button type="submit"><span>Submit</span></button>
