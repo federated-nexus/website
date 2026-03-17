@@ -31,10 +31,17 @@ jobs:
             - name: Build with Astro
               run: deno run astro build
 
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v4
+            - name: Create artifact
+              run: |
+               tar \
+                 --dereference --hard-dereference \
+                 -cvf "$RUNNER_TEMP/artifact.tar" \
+                 -C ./dist .
+      
+            - uses: actions/upload-artifact@v4
               with:
-                  path: dist
+                name: github-pages
+                path: ${{ runner.temp }}/artifact.tar
 
     deploy:
         environment:
