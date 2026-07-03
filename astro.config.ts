@@ -29,39 +29,12 @@ export default defineConfig({
                 { slug: "index" },
                 {
                     label: "Services",
-                    translations: {
-                        "ru-RU": "Услуги",
-                        "uk-UA": "Послуги",
-                    },
                     autogenerate: { directory: "services" },
                 },
                 { slug: "code" },
                 { slug: "privacy-policy" },
                 { slug: "donate" },
             ],
-
-            defaultLocale: "root",
-            locales: {
-                root: {
-                    label: "English",
-                    lang: "en",
-                },
-
-                "fr-fr": {
-                    label: "Français",
-                    lang: "fr-FR",
-                },
-
-                "uk-ua": {
-                    label: "Українська",
-                    lang: "uk-UA",
-                },
-
-                "ru-ru": {
-                    label: "Русский",
-                    lang: "ru-RU",
-                },
-            },
         }),
     ],
     image: { service: passthroughImageService() },
