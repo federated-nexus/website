@@ -27,6 +27,7 @@ export default defineConfig({
             ],
             sidebar: [
                 { slug: "index" },
+                { slug: "change-password" },
                 {
                     label: "Services",
                     autogenerate: { directory: "services" },
