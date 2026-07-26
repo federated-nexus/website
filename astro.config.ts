@@ -27,14 +27,15 @@ export default defineConfig({
             ],
             sidebar: [
                 { slug: "index" },
-                { slug: "change-password" },
                 {
                     label: "Services",
                     autogenerate: { directory: "services" },
                 },
+                { slug: "donate" },
+                { slug: "change-password" },
+                { slug: "tos" },
                 { slug: "code" },
                 { slug: "privacy-policy" },
-                { slug: "donate" },
             ],
         }),
     ],
